@@ -1,11 +1,11 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Default as Thing } from '../stories/Thing.stories';
+import { Default as Scrawl } from '../stories/Scrawl.stories';
 
-describe('Thing', () => {
+describe('Scrawl', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Thing />, div);
+    ReactDOM.render(<Scrawl />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
