@@ -1,0 +1,58 @@
+:root {
+  --tooltip-text-color: white;
+  --tooltip-background-color: #172b4d;
+  --tooltip-margin: 1.625rem;
+}
+
+.scrawl-tooltip-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.scrawl-tooltip-tip {
+  position: absolute;
+  border-radius: 0.125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem;
+  color: var(--tooltip-text-color);
+  background: var(--tooltip-background-color);
+  font-size: 0.75rem;
+  font-family: sans-serif;
+  line-height: 1;
+  z-index: 100;
+  white-space: nowrap;
+  animation-name: scrawl-tooltip-initial-animation;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+}
+
+.scrawl-tooltip-tip.top {
+  top: calc(var(--tooltip-margin) * -1);
+}
+
+.scrawl-tooltip-tip.right {
+  left: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+
+.scrawl-tooltip-tip.bottom {
+  bottom: calc(var(--tooltip-margin) * -1);
+}
+
+.scrawl-tooltip-tip.left {
+  left: auto;
+  right: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+
+@keyframes scrawl-tooltip-initial-animation {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
