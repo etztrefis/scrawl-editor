@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import { BoldIcon } from './icons';
+import { BoldIcon, ItalicIcon, UnderlineIcon } from './icons';
 import './scrawl.default.css';
 
 export interface IOScrawlProps extends HTMLAttributes<HTMLTextAreaElement> {
@@ -19,6 +19,12 @@ export const Scrawl = ({
       <div className="scrawl-menu">
         <button className="menu-button">
           <BoldIcon className="menu-icon" />
+        </button>
+        <button className="menu-button">
+          <ItalicIcon className="menu-icon" />
+        </button>
+        <button className="menu-button">
+          <UnderlineIcon className="menu-icon" />
         </button>
       </div>
       <textarea
