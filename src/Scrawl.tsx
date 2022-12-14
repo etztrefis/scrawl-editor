@@ -3,7 +3,7 @@ import ScrawlTooltipWrapper from './Components/Tooltip';
 import { BoldIcon, ItalicIcon, UnderlineIcon } from './icons';
 import './scrawl.default.css';
 
-export interface IOScrawlProps extends HTMLAttributes<HTMLTextAreaElement> {
+export interface IOScrawlProps extends HTMLAttributes<HTMLDivElement> {
   width?: number | string;
   height?: number | string;
   placeholder?: string;
@@ -16,7 +16,10 @@ export const Scrawl = ({
   ...props
 }: IOScrawlProps) => {
   return (
-    <div style={{ width: width, height: height }} className="scrawl-wrapper">
+    <div
+      style={{ width: width, height: height, ...props.style }}
+      className="scrawl-wrapper"
+    >
       <div className="scrawl-menu">
         <ScrawlTooltipWrapper
           content={
@@ -55,12 +58,12 @@ export const Scrawl = ({
           </button>
         </ScrawlTooltipWrapper>
       </div>
-      <textarea
+      <div
         {...props}
+        contentEditable
         className="scrawl"
         style={{ height: `calc(${height} - 2rem)` }}
-        placeholder={placeholder}
-      ></textarea>
+      ></div>
     </div>
   );
 };
