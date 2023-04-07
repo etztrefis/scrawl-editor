@@ -13,7 +13,13 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<IOScrawlProps> = args => (
-  <Scrawl {...args} width="40rem" height="20rem" style={{ margin: '2rem' }} />
+  <Scrawl
+    {...args}
+    width="40rem"
+    height="20rem"
+    style={{ margin: '2rem' }}
+    toolbarVisibility="focus"
+  />
 );
 
 export const Default = Template.bind({});
